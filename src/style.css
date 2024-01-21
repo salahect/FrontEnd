@@ -1,0 +1,13 @@
+img{
+    width: 100%;
+    display: block;
+}
+h1{
+    text-align: center;
+    color: var(--secundary);
+}
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}

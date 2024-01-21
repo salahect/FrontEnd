@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import MascotasComponent from "./Components/MascotasComponent.js";
+import ComponentInicio  from "./Components/ComponentInicio.js";
 import './App.css';
+import ComponentDescripcion from "./Components/ComponentDescripcion.js";
+import ComponentPadre from "./Components/ComponentPadre.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<ComponentInicio></ComponentInicio>}></Route>
+      <Route path='/mascotas' element={<MascotasComponent></MascotasComponent>}></Route>
+      <Route path='/padres' element={<ComponentPadre></ComponentPadre>}></Route>
+      <Route path='/ComponentDescripcion/:id' element={<ComponentDescripcion></ComponentDescripcion>}></Route>
+      
+    </Routes>
+  </BrowserRouter>
   );
 }
 
