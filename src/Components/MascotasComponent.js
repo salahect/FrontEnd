@@ -4,10 +4,13 @@ import axios from "axios";
 import { mostrarAlerta } from "../functions.js";
 import Swal from 'sweetalert2';
 import withReactContent from "sweetalert2-react-content";
+import max from '../img/max.jpg'
+
+
 //CUERPO COMPONENTE
 const MascotasComponent = () => {
   const url = "http://localhost:8000/mascotas";
-  const [mascotas, setMascotas] = useState([]);
+  const [mascota, setMascotas] = useState([]);
   const [id, setId] = useState("");
   const [nombre, setNombre] = useState("");
   const [edad, setEdad] = useState("");
@@ -116,42 +119,20 @@ const MascotasComponent = () => {
   }
 
   return (
-    
     <div className="App">
       <div className="container-fluid">
         <div className="row mt-3">
           <div className="col-md-4 offset-md-4">
             <div className="d-grid mx-auto">
-                <div class = "container">
-                    <div className="d-grid mx-auto">
-                        {mascotas.map((mascota, i)=>(          
-                        <div key={mascota.id}>
-                            <div className="row mt-3">
-                                <div className="col-12 col-lg-8 offset-0 offset-lg-2">
-                                    <div class="card" index="width: 18rem;">
-                                        <img src={mascota.imagen}  class="card-img-top" alt="..."></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">NOMBRRE:{mascota.nombre}</h5>
-                                            <p class="card-text">EDAD: {mascota.edad}</p>
-                                            <a href="#" class="btn btn-success">Descripcion</a>
-                                            <button
-                                                onClick={()=>openModal(1)}
-                                                className="btn btn-dark"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#modalMascotas"
-                                       >
-                                                <i className=""></i>adoptame
-                                            </button>
-                                        </div>
-                                        </div>
-                                    </div> 
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
- 
-             
+           
+              <button
+               onClick={()=>openModal(1)}
+                className="btn btn-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#modalMascotas"
+              >
+                <i className="fa-solid fa-circle-plus"></i>Añadir
+              </button>
             </div>
           </div>
         </div>
@@ -167,7 +148,8 @@ const MascotasComponent = () => {
                   </tr>
                 </thead>
                 <tbody className="table-group-divider">
-                  {mascotas.map((mascota, i) => (
+                  {mascota.map((mascota, i) => (
+                    
                     <tr key={mascota.id}>
                       <td>{mascota.id}</td>
                       <td>{mascota.nombre}</td>
@@ -255,6 +237,7 @@ const MascotasComponent = () => {
     </div>
   );
 };
+
 
 //EXPORT
 export default  MascotasComponent;

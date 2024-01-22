@@ -5,18 +5,15 @@ import max from '../img/max.jpg'
 
 const ComponentCard = ({ mascota, mostrarModal, id, mascotaModal }) => {
 
-    
-
     return (
-       
         <div className='col'>
-            
+
             <div className="card " style={{ width: "100%" }}>
                        
-            <img src= {max} className="card-img-top" alt="mascota" />
-                        <div className="card-body">
+                <img src= {max} className="card-img-top" alt="mascota" />
+                    <div className="card-body">
                         
-                            <h5 className="card-title">{mascota.nombre}</h5>
+                         <h5 className="card-title">{mascota.nombre}</h5>
                             <h5 className="card-title">{mascota.edad}</h5>
                             <h5 className="card-title">{mascota.raza}</h5>
                             <h5 className="card-title">{mascota.tipo}</h5>
@@ -36,6 +33,8 @@ const ComponentCard = ({ mascota, mostrarModal, id, mascotaModal }) => {
             
                   
         </div>
+
+        
     )
     
 }
